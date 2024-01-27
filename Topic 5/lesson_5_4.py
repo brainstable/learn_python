@@ -1,5 +1,5 @@
 list1 = ["Mike", "", "Emma", "Kelly", "", "Brad", "", "", ""]
 
-x = lambda lst: list(filter(None, lst))
+no_empty = list(filter(lambda x: x, list1))
 
-print(x(list1))
+print(no_empty)
