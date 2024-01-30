@@ -6,9 +6,8 @@ def read_last(file):
         lst = f.read().split()
 
     for l in lst:
-        word = l.replace('.', '').replace(',', '').replace(';', '').replace(':', '').replace('!', '').replace('?', '')
+        word = delete_punctuation(l)
         length_word = len(word)
-        temp_word = ''
         if length_word >= length_max:
             length_max = length_word
             words.append(word)
@@ -17,5 +16,8 @@ def read_last(file):
                     words.remove(w)
 
     return words
+
+def delete_punctuation(word):
+    return word.replace('.', '').replace(',', '').replace(';', '').replace(':', '').replace('!', '').replace('?', '')
 
 print(read_last('../data/pushkin.txt'))
