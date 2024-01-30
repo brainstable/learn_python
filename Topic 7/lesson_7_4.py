@@ -4,8 +4,8 @@ def count_repeat_word(file, word):
     with (open(file, encoding='utf-8') as f):
         lst = f.read().replace('.', '').replace(',', '').replace(';', '').replace(':', '').replace('!', '').replace('?', '').split()
 
-    for l in lst:
-        if word.lower() == l.lower():
+    for item in lst:
+        if word.lower() == item.lower():
             count += 1
 
     return count
