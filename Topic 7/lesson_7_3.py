@@ -1,0 +1,21 @@
+def read_last(file):
+    lst = []
+    words = []
+    length_max = 0
+    with open(file, encoding='utf-8') as f:
+        lst = f.read().split()
+
+    for l in lst:
+        word = l.replace('.', '').replace(',', '').replace(';', '').replace(':', '').replace('!', '').replace('?', '')
+        length_word = len(word)
+        temp_word = ''
+        if length_word >= length_max:
+            length_max = length_word
+            words.append(word)
+            for w in words:
+                if len(w) < length_max:
+                    words.remove(w)
+
+    return words
+
+print(read_last('../data/pushkin.txt'))
